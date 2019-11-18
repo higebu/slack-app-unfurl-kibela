@@ -1,0 +1,22 @@
+{
+  "name": "slack-app-unfurl-kibela",
+  "description": "Slack App for unfurling Kibela URL",
+  "keywords": [
+    "go",
+    "slack",
+    "kibela"
+  ],
+  "website": "http://github.com/higebu/slack-app-unfurl-kibela",
+  "repository": "http://github.com/higebu/slack-app-unfurl-kibela",
+  "env": {
+    "SLACK_TOKEN": {
+      "description": "Slack OAuth Access Token"
+    },
+    "KIBELA_TOKEN": {
+      "description": "Kibela Access Token"
+    },
+    "KIBELA_TEAM": {
+      "description": "Kibela Team Name"
+    }
+  }
+}
