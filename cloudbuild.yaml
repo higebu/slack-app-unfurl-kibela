@@ -4,7 +4,16 @@ steps:
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'gcr.io/$PROJECT_ID/slack-unfurl-kibela']
 - name: 'gcr.io/cloud-builders/gcloud'
-  args: ['run', 'deploy', 'slack-unfurl-kibela', '--image', 'gcr.io/$PROJECT_ID/slack-unfurl-kibela', '--region', 'asia-northeast1', '--platform', 'managed', '--allow-unauthenticated', '--set-env-vars KIBELA_TEAM=$$KIBELA_TEAM,KIBELA_TOKEN=$$KIBELA_TOKEN,SLACK_TOKEN=$$SLACK_TOKEN']
+  entrypoint: 'bash'
+  args: 
+    - '-c'
+    - |-
+      gcloud run deploy slack-unfurl-kibela \
+      --image gcr.io/$PROJECT_ID/slack-unfurl-kibela \
+      --region asia-northeast1 \
+      --platform managed \
+      --allow-unauthenticated \
+      --set-env-vars KIBELA_TEAM=$$KIBELA_TEAM,KIBELA_TOKEN=$$KIBELA_TOKEN,SLACK_TOKEN=$$SLACK_TOKEN
   secretEnv: ['KIBELA_TEAM', 'KIBELA_TOKEN', 'SLACK_TOKEN']
 images:
 - gcr.io/$PROJECT_ID/slack-unfurl-kibela
