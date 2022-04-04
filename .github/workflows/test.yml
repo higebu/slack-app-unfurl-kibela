@@ -11,6 +11,9 @@ jobs:
         with:
           go-version: '1.18'
       - name: go test
+        env:
+          KIBELA_TEAM: ${{ secrets.KIBELA_TEAM }}
+          KIBELA_TOKEN: ${{ secrets.KIBELA_TOKEN }}
         run: go test
       - name: docker build test
         run: docker build -t bbsakura/etimebot:latest .
