@@ -9,6 +9,10 @@
   "website": "http://github.com/higebu/slack-app-unfurl-kibela",
   "repository": "http://github.com/higebu/slack-app-unfurl-kibela",
   "env": {
+    "GOVERSION": {
+      "description": "go version",
+      "value": "1.18"
+    },
     "SLACK_TOKEN": {
       "description": "Slack OAuth Access Token"
     },
