@@ -1,6 +1,6 @@
 module github.com/higebu/slack-app-unfurl-kibela
 
-go 1.18
+go 1.19
 
 require (
 	github.com/machinebox/graphql v0.2.2
